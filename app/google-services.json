@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "180620222906",
+    "project_id": "e-control-8d9c5",
+    "storage_bucket": "e-control-8d9c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180620222906:android:abe11c82f5730a75f27d83",
+        "android_client_info": {
+          "package_name": "com.henrique.e_control"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaHCeLJHf_NsxBdmxLGEbhBPy4WTmzHwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
