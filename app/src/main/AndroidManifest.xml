@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".ui.NewRegisterActivity"/>
         <activity android:name=".ui.ComputersActivity"/>
+        <activity android:name=".ui.ComputerDetailsActivity"/>
     </application>
 
 </manifest>
