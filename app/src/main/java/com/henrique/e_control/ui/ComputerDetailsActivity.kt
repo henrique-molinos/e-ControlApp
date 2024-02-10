@@ -1,5 +1,6 @@
 package com.henrique.e_control.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -18,6 +19,7 @@ class ComputerDetailsActivity : AppCompatActivity() {
     private lateinit var tvCompIp: TextView
     private lateinit var tvEconectVersion: TextView
     private lateinit var btnUpdate: Button
+    private lateinit var btnDelete: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,12 +28,16 @@ class ComputerDetailsActivity : AppCompatActivity() {
         setupView()
         setupValues()
 
-        // Criação do ClickListener do botão "Atualizar dados"
+        // Criação do ClickListener do botão "Atualizar"
         btnUpdate.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("idComp").toString(),
                 intent.getStringExtra("nomeComp").toString()
             )
+        }
+        // Criação do ClickListener do botão "Deletar"
+        btnDelete.setOnClickListener {
+            deleteRecord(intent.getStringExtra("idComp").toString())
         }
     }
 
@@ -41,7 +47,7 @@ class ComputerDetailsActivity : AppCompatActivity() {
         tvCompIp = findViewById(R.id.tv_det_ip_computador)
         tvEconectVersion = findViewById(R.id.tv_det_versao_econect)
         btnUpdate = findViewById(R.id.btn_det_atualizar)
-
+        btnDelete = findViewById(R.id.btn_det_deletar)
     }
 
     // Função que preenche os valores das EditTexts
@@ -105,6 +111,21 @@ class ComputerDetailsActivity : AppCompatActivity() {
         val dbRef = FirebaseDatabase.getInstance().getReference("Computadores").child(id)
         val compInfo = Computador(id, name, ip, econectVersion)
         dbRef.setValue(compInfo)
+    }
+
+    private fun deleteRecord(id: String) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("Computadores").child(id)
+        val mTask = dbRef.removeValue()
+
+        mTask.addOnSuccessListener {
+            Toast.makeText(this, "Computador removido com sucesso", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, ComputersActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener {
+            err -> Toast.makeText(this, "Erro ao remover: ${err.message}", Toast.LENGTH_LONG).show()
+        }
     }
 
 }
