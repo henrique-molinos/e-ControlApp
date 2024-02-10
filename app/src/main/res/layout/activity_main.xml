@@ -21,24 +21,27 @@
 
     <Button
         android:id="@+id/btn_act_inserir"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="50dp"
         android:backgroundTint="@color/blue"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="18dp"
         android:text="@string/btn_act_inserir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_act_consultar"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
         android:backgroundTint="@color/blue"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
         android:text="@string/btn_act_consultar"
-        app:layout_constraintStart_toEndOf="@id/btn_act_inserir"
-        app:layout_constraintTop_toTopOf="@id/btn_act_inserir"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_act_inserir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">e-Control</string>
     <string name="titulo_app">e-Control</string>
-    <string name="btn_act_inserir">Inserir dados</string>
-    <string name="btn_act_consultar">Consultar dados</string>
+    <string name="btn_act_inserir">Cadastrar</string>
+    <string name="btn_act_consultar">Consultar</string>
     <string name="et_nome_computador">Nome do computador</string>
     <string name="et_ip_computador">IP do computador</string>
     <string name="et_versao_econect">Versão da aplicação</string>
