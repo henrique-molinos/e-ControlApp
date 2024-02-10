@@ -36,7 +36,7 @@
                 style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PDV 01"
+                android:text="@string/tv_nome_comp"
                 app:layout_constraintEnd_toEndOf="@id/iv_computador"
                 app:layout_constraintStart_toStartOf="@id/iv_computador"
                 app:layout_constraintTop_toBottomOf="@id/iv_computador" />
@@ -45,7 +45,7 @@
                 android:id="@+id/tv_ip_computador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10.130.7.201"
+                android:text="@string/tv_ip_computador"
                 app:layout_constraintEnd_toEndOf="@id/iv_computador"
                 app:layout_constraintStart_toStartOf="@id/iv_computador"
                 app:layout_constraintTop_toBottomOf="@id/tv_nome_computador" />
@@ -54,7 +54,7 @@
                 android:id="@+id/tv_versao_econect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="V RLS 14.4.1-0"
+                android:text="@string/tv_versao_econect"
                 app:layout_constraintEnd_toEndOf="@id/iv_computador"
                 app:layout_constraintStart_toStartOf="@id/iv_computador"
                 app:layout_constraintTop_toBottomOf="@id/tv_ip_computador" />

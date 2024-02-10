@@ -40,7 +40,7 @@ class ComputerDetailsActivity : AppCompatActivity() {
         tvCompName = findViewById(R.id.tv_det_nome_computador)
         tvCompIp = findViewById(R.id.tv_det_ip_computador)
         tvEconectVersion = findViewById(R.id.tv_det_versao_econect)
-        btnUpdate = findViewById(R.id.btn_atualizar)
+        btnUpdate = findViewById(R.id.btn_det_atualizar)
 
     }
 
@@ -71,7 +71,7 @@ class ComputerDetailsActivity : AppCompatActivity() {
         etEconectVersion.setText(intent.getStringExtra("versaoEconect").toString())
 
         // Informando o usuário sobre a atualização
-        mDialog.setTitle("Atualizando registro de: $nomeComp")
+        mDialog.setTitle("Atualizando $nomeComp")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
@@ -88,7 +88,7 @@ class ComputerDetailsActivity : AppCompatActivity() {
             // Notificando o usuário sobre a atualização dos dados
             Toast.makeText(
                 applicationContext,
-                "Dados do Computador atualizados",
+                "Dados atualizados",
                 Toast.LENGTH_LONG).show()
 
             // Aplicando os valores atualizados para as TVs

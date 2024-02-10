@@ -19,7 +19,7 @@
         style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome do Computador"
+        android:text="@string/tv_nome_do_computador"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/iv_computador_details"
         app:layout_constraintStart_toStartOf="@id/iv_computador_details"
@@ -48,13 +48,24 @@
         app:layout_constraintTop_toBottomOf="@id/tv_det_ip_computador" />
 
     <Button
-        android:id="@+id/btn_atualizar"
+        android:id="@+id/btn_det_atualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/btn_det_atualizar_dados"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_det_deletar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:text="@string/btn_det_deletar"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/btn_det_atualizar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

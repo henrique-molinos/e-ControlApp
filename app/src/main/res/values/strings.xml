@@ -7,8 +7,13 @@
     <string name="et_ip_computador">IP do computador</string>
     <string name="et_versao_econect">Versão da aplicação</string>
     <string name="btn_cadastrar">Salvar</string>
-    <string name="btn_det_atualizar_dados">Atualizar dados</string>
+    <string name="btn_det_atualizar_dados">Atualizar</string>
     <string name="tv_det_versao_econect" tools:ignore="TypographyDashes">14.4.1-0</string>
     <string name="tv_det_ip_computador">192.168.0.100</string>
     <string name="btn_upd_atualizar">Atualizar</string>
+    <string name="btn_det_deletar">Deletar</string>
+    <string name="tv_nome_comp">Nome Comp</string>
+    <string name="tv_ip_computador">IP Computador</string>
+    <string name="tv_versao_econect">Versão Econect</string>
+    <string name="tv_nome_do_computador">Nome do Computador</string>
 </resources>
