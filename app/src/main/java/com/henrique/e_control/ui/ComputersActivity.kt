@@ -5,19 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.database
 import com.henrique.e_control.R
-import com.henrique.e_control.data.ComputerFactory
 import com.henrique.e_control.domain.Computador
 import com.henrique.e_control.ui.adapter.ComputerAdapter
 
@@ -78,7 +73,7 @@ class ComputersActivity : AppCompatActivity() {
                             val intent = Intent(this@ComputersActivity, ComputerDetailsActivity::class.java)
 
                             // Colocar dados extas
-//                            intent.putExtra("idComp", compList[position].idComp)
+                            intent.putExtra("idComp", compList[position].idComp)
                             intent.putExtra("nomeComp", compList[position].nomeComp)
                             intent.putExtra("ipComp", compList[position].ipComp)
                             intent.putExtra("versaoEconect", compList[position].versaoEconect)

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">e-Control</string>
     <string name="titulo_app">e-Control</string>
     <string name="btn_act_inserir">Inserir dados</string>
@@ -8,6 +8,7 @@
     <string name="et_versao_econect">Versão da aplicação</string>
     <string name="btn_cadastrar">Salvar</string>
     <string name="btn_det_atualizar_dados">Atualizar dados</string>
-    <string name="tv_det_versao_econect">14.4.1-0</string>
+    <string name="tv_det_versao_econect" tools:ignore="TypographyDashes">14.4.1-0</string>
     <string name="tv_det_ip_computador">192.168.0.100</string>
+    <string name="btn_upd_atualizar">Atualizar</string>
 </resources>

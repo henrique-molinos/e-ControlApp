@@ -7,7 +7,7 @@
     tools:context=".ui.NewRegisterActivity">
 
     <EditText
-        android:id="@+id/et_nome_computador"
+        android:id="@+id/et_upd_nome_computador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/et_ip_computador"
+        android:id="@+id/et_upd_ip_computador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -27,11 +27,11 @@
         android:inputType="textPersonName"
         android:hint="@string/et_ip_computador"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_nome_computador"
+        app:layout_constraintTop_toBottomOf="@id/et_upd_nome_computador"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/et_versao_econect"
+        android:id="@+id/et_upd_versao_econect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -39,17 +39,17 @@
         android:inputType="textPersonName"
         android:hint="@string/et_versao_econect"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_ip_computador"
+        app:layout_constraintTop_toBottomOf="@id/et_upd_ip_computador"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
-        android:id="@+id/btn_cadastrar"
+        android:id="@+id/btn_upd_atualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_upd_atualizar"
-        android:layout_marginBottom="50dp"
+        android:text="@string/btn_cadastrar"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/et_upd_versao_econect"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
