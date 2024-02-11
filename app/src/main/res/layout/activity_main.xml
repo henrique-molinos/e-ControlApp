@@ -19,14 +19,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lista_clientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo_app"
+        app:spanCount="2"
+        tools:listitem="@layout/customer_item"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/pb_main_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
     <Button
-        android:id="@+id/btn_act_inserir"
+        android:id="@+id/btn_act_cadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
         android:layout_marginStart="18dp"
-        android:layout_marginBottom="80dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/btn_act_inserir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,12 +60,12 @@
         android:id="@+id/btn_act_consultar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/btn_act_consultar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_act_inserir" />
+        app:layout_constraintTop_toBottomOf="@id/btn_act_cadastrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

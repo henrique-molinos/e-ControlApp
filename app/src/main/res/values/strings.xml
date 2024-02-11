@@ -16,4 +16,5 @@
     <string name="tv_ip_computador">IP Computador</string>
     <string name="tv_versao_econect">Versão Econect</string>
     <string name="tv_nome_do_computador">Nome do Computador</string>
+    <string name="tv_nome_cliente">Beltrame</string>
 </resources>

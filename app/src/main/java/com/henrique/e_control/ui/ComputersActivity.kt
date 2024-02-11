@@ -34,10 +34,6 @@ class ComputersActivity : AppCompatActivity() {
         compRecyclerView.layoutManager = GridLayoutManager(this, 3)
         compRecyclerView.setHasFixedSize(true)
 
-        compRecyclerView.setOnClickListener {
-
-        }
-
         progressBar = findViewById(R.id.pb_loader)
 
         compList = arrayListOf<Computador>()
@@ -80,9 +76,7 @@ class ComputersActivity : AppCompatActivity() {
                             // Iniciando a Activity
                             startActivity(intent)
                         }
-
                     })
-
                     compRecyclerView.visibility = View.VISIBLE
                     progressBar.visibility = View.GONE
                 }

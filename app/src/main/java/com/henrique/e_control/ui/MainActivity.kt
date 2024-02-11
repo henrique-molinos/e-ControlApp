@@ -3,29 +3,55 @@ package com.henrique.e_control.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
-import com.google.firebase.Firebase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.database
-import com.google.firebase.database.getValue
+import android.widget.ProgressBar
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.henrique.e_control.R
+import com.henrique.e_control.data.CustomerFactory
+import com.henrique.e_control.domain.Cliente
+import com.henrique.e_control.ui.adapter.ComputerAdapter
+import com.henrique.e_control.ui.adapter.CustomerAdapter
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btnInserir: Button
-    lateinit var btnConsultar: Button
+    private lateinit var customerRecyclerView: RecyclerView
+    private lateinit var customerList: List<Cliente>
+    private lateinit var progressBar: ProgressBar
+    private lateinit var btnCadastrar: Button
+    private lateinit var btnConsultar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnInserir = findViewById(R.id.btn_act_inserir)
-        btnConsultar = findViewById(R.id.btn_act_consultar)
+        customerList = CustomerFactory.list
 
-        btnInserir.setOnClickListener {
+        setupView()
+        setupFactory()
+        setupListeners()
+    }
+
+    private fun setupView() {
+        customerRecyclerView = findViewById(R.id.rv_lista_clientes)
+        customerRecyclerView.layoutManager = GridLayoutManager(this, 2)
+
+        progressBar = findViewById(R.id.pb_main_loader)
+        btnCadastrar = findViewById(R.id.btn_act_cadastrar)
+        btnConsultar = findViewById(R.id.btn_act_consultar)
+    }
+
+    private fun setupFactory() {
+        val mAdapter =  CustomerAdapter(customerList)
+        customerRecyclerView.adapter = mAdapter
+
+        customerRecyclerView.visibility = View.VISIBLE
+    }
+
+    private fun setupListeners() {
+        btnCadastrar.setOnClickListener {
             val intent = Intent(this, NewRegisterActivity::class.java)
             startActivity(intent)
         }
@@ -35,29 +61,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        messageDatabase()
+
+//        mAdapter.setOnClickListener(object : CustomerAdapter.OnItemClickListener {
+//            override fun onItemClick(position: Int) {
+//                // Colocar dados extas
+//                intent.putExtra("idComp", customerList[position].idCliente)
+//                intent.putExtra("nomeComp", customerList[position].nomeCliente)
+//                intent.putExtra("ipComp", customerList[position].logo)
+//            }
+//        })
+    }
+
+    fun getCustomersData() {
+        customerRecyclerView.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+
 
     }
 
-    fun messageDatabase() {
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello")
-
-        // Read from the database
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This methos is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value = dataSnapshot.getValue<String>()
-                Log.d("Firebase", "Value is: $value")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.d("Firebase", "Failed to read value.", error.toException())
-            }
-            })
-    }
 }
